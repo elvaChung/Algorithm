@@ -18,3 +18,13 @@ console.log(reverseString2("I love you"));
 
 const reverseString3 = (str) => { return str.split("").reverse().join("")};
 console.log(reverseString3("good morning"));
+
+// function reverseString4(str, function(){
+//     let newString = "";        
+//             for(let i = str.lengt -1; i > -1; i--){
+//                 newString += str[i];                       
+//     }   return  newString;
+// }) {
+
+// }
+// console.log(reverseString4("Evening"));
