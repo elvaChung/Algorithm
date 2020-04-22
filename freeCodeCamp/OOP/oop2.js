@@ -167,20 +167,4 @@ let beagle = Object.create(Animal.prototype);
 duck.eat();
 console.log("10-2. " + (beagle instanceof Animal));
 
-// 11. Set the Child's Prototype to an Instance of the Parent
-
-// 12. Reset an Inherited Constructor Property
-
-// 13. Add Methods After Inheritance
-
-// 14. Override Inherited Methods
-
-// 15. Use a Mixin to Add Common Behavior Between Unrelated Objects
-
-// 16. Use Closure to Protect Properties Within an Object from Being Modified Externally
-
-// 17. Understand the Immediately Invoked Function Expression(IIFE)
-
-// 18. Use an IIFE to Create a Module
-
 
