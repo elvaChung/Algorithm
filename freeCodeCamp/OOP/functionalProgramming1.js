@@ -38,9 +38,59 @@ console.log(
 );
 
 // 3. Understand the Hazards of Using Imperative Code
+let Window = function(tabs) {
+    this.tabs = tabs;
+}
+
+Window.prototype.join = function(otherWindow) {
+    this.tabs = this.tabs.concat(otherWindow.tabs);
+    return this;
+}
+
+Window.prototype.tabOpen = function(tab) {
+    this.tabs.push('new tab');
+    return this;
+}
+
+Window.prototype.tabClose = function(index) {
+    let tabsBeforeIndex = this.tabs.splice(0, index);
+    let tabsAfterIndex = this.tabs.splice(1);
+    this.tabs = tabsBeforeIndex.concat(tabsAfterIndex);
+    return this;
+}
+
+let workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']);
+let socialWindow = new Window(['FB', 'Glitter','Reddit', 'Twitter', 'Medium']);
+let videoWindow = new Window(['Netflix', "YouTube", 'Vimeo', 'Vine']);
+
+let finalTabs = socialWindow
+    .tabOpen()
+    .join(videoWindow.tabClose(2))
+    .join(workWindow.tabClose(1)).tabOpen();
+
+console.log(finalTabs.tabs);
+
 // 4. Avoid Mutations and Side Effects Using Functional Programming
+let fixedValue = 4;
+
+function incrementer() {
+    return fixedValue + 1;    
+}
+
+console.log(fixedValue);
+console.log(incrementer());
+
 // 5. Pass Arguments to Avoid External Dependence in a Function
+let fixedValue5 = 4;
+function incrementer5(value) {
+    return value + 1;    
+}
+
+console.log(fixedValue5);
+console.log(incrementer5(fixedValue5));
+
 // 6. Refactor Global Variables out of Functions
+
 // 7. Use the map Method to Extract Data from an Array 
 // 8. Implement map on a Prototype
 // 9. Use the filter Method to Extract Data from an Array
